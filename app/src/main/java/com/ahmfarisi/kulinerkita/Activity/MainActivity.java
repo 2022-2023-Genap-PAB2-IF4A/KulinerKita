@@ -1,8 +1,10 @@
-package com.ahmfarisi.kulinerkita;
+package com.ahmfarisi.kulinerkita.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.ahmfarisi.kulinerkita.R;
 
 public class MainActivity extends AppCompatActivity {
 
