@@ -3,6 +3,7 @@ package com.ahmfarisi.kulinerkita.Adapter;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.ahmfarisi.kulinerkita.API.APIRequestData;
 import com.ahmfarisi.kulinerkita.API.RetroServer;
 import com.ahmfarisi.kulinerkita.Activity.MainActivity;
+import com.ahmfarisi.kulinerkita.Activity.UbahActivity;
 import com.ahmfarisi.kulinerkita.Model.ModelKuliner;
 import com.ahmfarisi.kulinerkita.Model.ModelResponse;
 import com.ahmfarisi.kulinerkita.R;
@@ -85,7 +87,12 @@ public class AdapterKuliner extends RecyclerView.Adapter<AdapterKuliner.VHKuline
                     pesan.setPositiveButton("Ubah", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
-
+                            Intent pindah = new Intent(ctx, UbahActivity.class);
+                            pindah.putExtra("xId", tvId.getText().toString());
+                            pindah.putExtra("xNama", tvNama.getText().toString());
+                            pindah.putExtra("xAsal", tvAsal.getText().toString());
+                            pindah.putExtra("xDeskripsiSingkat", tvDeskripsiSingkat.getText().toString());
+                            ctx.startActivity(pindah);
                         }
                     });
 
