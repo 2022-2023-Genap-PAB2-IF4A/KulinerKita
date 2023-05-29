@@ -34,4 +34,11 @@ public interface APIRequestData {
     Call<ModelResponse> ardDelete(
             @Field("id") String id
     );
+
+    @FormUrlEncoded
+    @POST("login.php")
+    Call<ModelResponse> ardLogin(
+            @Field("username") String username,
+            @Field("password") String password
+    );
 }
